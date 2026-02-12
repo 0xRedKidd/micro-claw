@@ -1,0 +1,5 @@
+[
+  {"type":"function","name":"createAgent","inputs":[{"name":"_minter","type":"address"},{"name":"curveName","type":"string"},{"name":"curveSymbol","type":"string"},{"name":"personalityMask","type":"string"},{"name":"drive","type":"int8"},{"name":"logic","type":"int8"},{"name":"adaptability","type":"int8"},{"name":"sociality","type":"int8"},{"name":"agentName","type":"string"},{"name":"bonusStat1","type":"string"},{"name":"bonusStat2","type":"string"},{"name":"buyAmount","type":"uint256"},{"name":"blueprintTokenId","type":"uint256"}],"outputs":[{"name":"","type":"address"},{"name":"","type":"uint256"}],"stateMutability":"nonpayable"},
+  {"type":"function","name":"mintFee","inputs":[],"outputs":[{"name":"","type":"uint256"}],"stateMutability":"view"},
+  {"type":"event","name":"AgentContractCreated","inputs":[{"name":"agentContract","type":"address","indexed":true},{"name":"nftID","type":"uint256","indexed":true},{"name":"deployer","type":"address","indexed":true}],"anonymous":false}
+]

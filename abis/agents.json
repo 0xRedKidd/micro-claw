@@ -1,0 +1,23 @@
+[
+  {"type":"function","name":"balanceOf","inputs":[{"name":"owner","type":"address"}],"outputs":[{"name":"","type":"uint256"}],"stateMutability":"view"},
+  {"type":"function","name":"tokenOfOwnerByIndex","inputs":[{"name":"owner","type":"address"},{"name":"index","type":"uint256"}],"outputs":[{"name":"","type":"uint256"}],"stateMutability":"view"},
+  {"type":"function","name":"ownerOf","inputs":[{"name":"tokenId","type":"uint256"}],"outputs":[{"name":"","type":"address"}],"stateMutability":"view"},
+  {"type":"function","name":"getCoreStats","inputs":[{"name":"tokenId","type":"uint256"}],"outputs":[{"name":"agility","type":"uint256"},{"name":"strength","type":"uint256"},{"name":"vitality","type":"uint256"},{"name":"intelligence","type":"uint256"},{"name":"energy","type":"uint256"}],"stateMutability":"view"},
+  {"type":"function","name":"getCoreStatsWithEquipment","inputs":[{"name":"tokenId","type":"uint256"}],"outputs":[{"name":"agility","type":"uint256"},{"name":"strength","type":"uint256"},{"name":"vitality","type":"uint256"},{"name":"intelligence","type":"uint256"},{"name":"energy","type":"uint256"}],"stateMutability":"view"},
+  {"type":"function","name":"getLevel","inputs":[{"name":"tokenId","type":"uint256"}],"outputs":[{"name":"","type":"uint256"}],"stateMutability":"view"},
+  {"type":"function","name":"getExp","inputs":[{"name":"tokenId","type":"uint256"}],"outputs":[{"name":"","type":"uint256"}],"stateMutability":"view"},
+  {"type":"function","name":"getEnergy","inputs":[{"name":"tokenId","type":"uint256"}],"outputs":[{"name":"","type":"uint256"}],"stateMutability":"view"},
+  {"type":"function","name":"getPersonality","inputs":[{"name":"tokenId","type":"uint256"}],"outputs":[{"name":"drive","type":"int8"},{"name":"logic","type":"int8"},{"name":"adaptability","type":"int8"},{"name":"sociality","type":"int8"}],"stateMutability":"view"},
+  {"type":"function","name":"nameOf","inputs":[{"name":"tokenId","type":"uint256"}],"outputs":[{"name":"","type":"string"}],"stateMutability":"view"},
+  {"type":"function","name":"classOf","inputs":[{"name":"tokenId","type":"uint256"}],"outputs":[{"name":"","type":"string"}],"stateMutability":"view"},
+  {"type":"function","name":"equippedWeapon","inputs":[{"name":"tokenId","type":"uint256"}],"outputs":[{"name":"","type":"uint256"}],"stateMutability":"view"},
+  {"type":"function","name":"equippedArmor","inputs":[{"name":"tokenId","type":"uint256"}],"outputs":[{"name":"","type":"uint256"}],"stateMutability":"view"},
+  {"type":"function","name":"equippedSoftware","inputs":[{"name":"tokenId","type":"uint256"}],"outputs":[{"name":"","type":"uint256"}],"stateMutability":"view"},
+  {"type":"function","name":"equippedCPU","inputs":[{"name":"tokenId","type":"uint256"}],"outputs":[{"name":"","type":"uint256"}],"stateMutability":"view"},
+  {"type":"function","name":"equip","inputs":[{"name":"agentId","type":"uint256"},{"name":"itemContract","type":"address"},{"name":"itemId","type":"uint256"}],"outputs":[],"stateMutability":"nonpayable"},
+  {"type":"function","name":"unequip","inputs":[{"name":"agentId","type":"uint256"},{"name":"itemContract","type":"address"}],"outputs":[],"stateMutability":"nonpayable"},
+  {"type":"function","name":"levelUp","inputs":[{"name":"tokenId","type":"uint256"},{"name":"statName","type":"string"},{"name":"traitId","type":"uint256"}],"outputs":[],"stateMutability":"nonpayable"},
+  {"type":"function","name":"burnItemsForXP","inputs":[{"name":"agentId","type":"uint256"},{"name":"slot","type":"uint8"},{"name":"itemId","type":"uint256"},{"name":"amount","type":"uint256"}],"outputs":[],"stateMutability":"nonpayable"},
+  {"type":"function","name":"getEquippedTraits","inputs":[{"name":"tokenId","type":"uint256"}],"outputs":[{"name":"","type":"uint256[]"}],"stateMutability":"view"},
+  {"type":"function","name":"getNextLevelTraitOptions","inputs":[{"name":"tokenId","type":"uint256"}],"outputs":[{"name":"needed","type":"bool"},{"name":"options","type":"uint256[]"}],"stateMutability":"view"}
+]
