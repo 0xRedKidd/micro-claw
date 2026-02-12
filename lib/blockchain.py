@@ -5,8 +5,11 @@ import os
 from dataclasses import dataclass, field
 from typing import Any, Dict, List, Optional
 
+import requests
 from eth_account import Account
 from eth_account.messages import encode_defunct
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
 from web3 import Web3
 
 from config_openclaw import Settings
@@ -75,7 +78,19 @@ class AgentInfo:
 class BlockchainService:
     def __init__(self, config: Settings):
         self.config = config
-        self.w3 = Web3(Web3.HTTPProvider(config.rpc_url))
+
+        # Retry on 429 / 502 / 503 / 504 with exponential backoff
+        session = requests.Session()
+        retry = Retry(
+            total=5,
+            backoff_factor=2,
+            status_forcelist=[429, 502, 503, 504],
+            allowed_methods=["POST"],
+        )
+        session.mount("http://", HTTPAdapter(max_retries=retry))
+        session.mount("https://", HTTPAdapter(max_retries=retry))
+
+        self.w3 = Web3(Web3.HTTPProvider(config.rpc_url, session=session))
         if not self.w3.is_connected():
             raise RuntimeError(f"Cannot connect to RPC: {config.rpc_url}")
 
