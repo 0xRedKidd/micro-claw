@@ -174,8 +174,10 @@ def ensure_agent(chain: BlockchainService) -> int:
 async def run_cycle(chain: BlockchainService, config: Settings, token_id: int) -> None:
     agent = chain.get_agent_info(token_id)
 
-    while try_level_up(chain, agent, console):
+    leveled = True
+    while leveled:
         agent = chain.get_agent_info(token_id)
+        leveled = try_level_up(chain, agent, console)
 
     try_equip_best(chain, config, agent, console)
     try_burn_items(chain, config, agent, console)
